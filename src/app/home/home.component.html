@@ -1,0 +1,720 @@
+    
+    <!-- Carousel --> 
+    <header id="header" class="header fill carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#header" data-slide-to="0" class="active"></li>
+        <li data-target="#header" data-slide-to="1"></li>
+        <li data-target="#header" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <div id="header-img-1" class="fill fill-scroll"></div>
+          <div class="carousel-caption">
+            <div class="intro-text">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div id="header-img-2" class="fill fill-scroll"></div>
+          <div class="carousel-caption">
+            <div class="intro-text">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div id="header-img-3" class="fill fill-scroll"></div>
+          <div class="carousel-caption">
+            <div class="intro-text">
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+					<div class="header-text row title text-center">
+						<div class="col-md-12">
+							<h2 id="header_text_h2" class="light white">Au coeur de l'océan Indien</h2>
+							<h1 id="header_text_h1" class="white">Prêts pour l' aventure!</h1>
+              <a id="header_link_btn" href="#activity" role="button" class="page-scroll btn btn-lg btn-secondary btn-heading">Démarrez l'expérience</a>
+						</div>
+					</div>
+          <div class="copy">
+            <span>Copyright &copy; IRT/Frog 974</span>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#header" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#header" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </header> <!-- /.carousel -->
+
+    
+    <!-- Activity --> 
+    <section id="activity" class="section bg-gray-lighter">
+      <div class="container-fluid">
+        <div class="row title text-center">
+          <h2 class="margin-top">Nos activités</h2>
+          <!--<h4 class="light muted">Lorem ipsum dolor sit amet</h4>-->
+        </div>
+        <div class="content row">
+          <div class="col-lg-3 col-sm-6 col-xs-12">
+            <div class="activity text-center">
+              <div class="cover" style="background:url('assets/img/activity/P3050429.jpg'); background-size:cover;">
+                <div class="overlay text-center">
+                  <h3 class="white">Canyonisme</h3>
+                  <h5 class="light white">A partir de <span class="price">50€</span> / sortie</h5>
+                </div>
+              </div>
+              <!--
+              <img src="img/activity/team3.jpg" alt="activity Image" class="avatar">
+              -->
+              <div class="title">
+                <h4>Canyonisme</h4>
+                <!--
+                <ul class="list-inline social-buttons">
+                  <li><a href="https://www.flickr.com/"><i class="fa fa-flickr"></i></a>
+                  </li>
+                  <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                  </li>
+                  <li><a href="https://twitter.com"><i class="fa fa-twitter"></i></a>
+                  </li>
+                </ul>
+                -->
+              </div>
+              <!-- Button trigger modal -->
+              <a [routerLink]="['/canyons']" role="button" class="btn btn-lg btn-secondary">Découvrir</a>
+              
+              <!-- Modal -->
+              <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel1">Canyonisme</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-justify">
+                        Vivre une eXperience dans l’eau, à la découverte d’un environnement unique, il existe bien des cours d’eau, bien des ravines cachées abritant de nombreux joyaux naturels au sein de l’île. Dans des espaces inscrits au patrimoine mondial, venez vous amusez à glisser dans les toboggans , sautez dans les vasques, nagez dans les biefs, descendre de grandes verticales en rappel...Bref, du fun, de l’ adrénaline, un respect sans faille pour cet environnement fragile et de la formation pour acquérir un certain niveau d’autonomie, en toute sécurité! Sortez de votre zone de confort avec des passionnés de l’activité. Vibrez pour vivre...
+                        </p>                      
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Reserver</button>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- /.Modal -->
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-xs-12">
+            <div class="activity text-center">
+              <div class="cover" style="background:url('assets/img/activity/tunnel_de_lave21_caverne_mapou_-_CREDIT_IRT_-_frog_974_photographies_dts_06_2018.jpg'); background-size:cover;">
+                <div class="overlay text-center">
+                  <h3 class="white">Tunnel de lave</h3>
+                  <h5 class="light white">A partir de <span class="price">45€</span> / sortie</h5>
+                </div>
+              </div>
+              <div class="title">
+                <h4>Tunnel de lave</h4>
+              </div>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#myModal2">Decouvrir</button>
+              <!-- Modal -->
+              <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel2">Tunnel de lave</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-justify">
+                          Vivre un eXpérience sous terre, c’est partir à l’aventure, pour comprendre les mystères de la création de ce patrimoine volcanique unique. Découvrez de nouveaux horizons, être sensibiliser à la fragilité de ce milieux et partir à la découverte de formes inédites... Que se cache t’il donc sous les différentes coulées de lave de l’île? Apprendre pour comprendre...
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Reserver</button>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- /.Modal -->
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-xs-12">
+            <div class="activity text-center">
+              <div class="cover" style="background:url('assets/img/activity/randonnee_pedestre104_chemin_pave_lougnon_-_CREDIT_IRT_-_frog_974_photographies_dts_06_2018.jpg'); background-size:cover;">
+                <div class="overlay text-center">
+                  <h3 class="white">Randonnées</h3>
+                  <h5 class="light white">A partir de <span class="price">40€</span> / sortie</h5>
+                </div>
+              </div>
+              <div class="title">
+                <h4>Randonnées</h4>
+              </div>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#myModal3">Decouvrir</button>
+              <!-- Modal -->
+              <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel3">Randonnées</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-justify">
+                          Vivre une eXperience intense entre 0 et 3080 m d’altitude, c’est la garantie de découvrir à son rythme le paradis des randonneurs! Entre parc national et patrimoine mondial, venez prendre des photos, découvrir la faune, la flore, les paysages et prendre votre temps au gré des sentiers marrons, GR et autres sentes. Contempler pour découvrir... 
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Reserver</button>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- /.Modal -->
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-xs-12">
+            <div class="activity text-center">
+              <div class="cover" style="background:url('assets/img/activity/randonnee_pedestre84_-_CREDIT_IRT_-_lionel_ghighi_dts_07_2017.jpg'); background-size:cover;">
+                <div class="overlay text-center">
+                  <h3 class="white">Treks - Trails</h3>
+                  <h5 class="light white">A partir de <span class="price">35€</span> / personne</h5>
+                </div>
+              </div>
+              <div class="title">
+                <h4>Treks - Trails</h4>
+              </div>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#myModal4">Decouvrir</button>
+              <!-- Modal -->
+              <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel4">Treks - Trails</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-justify">
+                          Vivre une eXperience de plusieurs jours, pour découvrir la richesse de la diversité locale, partager des moments à la rencontre d’hommes et de lieux fantastiques: entre pitons, cirques, cascades, forêts primaire, volcans, ilets et ravines. Pour les plus sportifs et affutés, des entrainements trails sont possibles avec notre championne locale du team Cilaos... Partagez pour apprendre
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Reserver</button>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- /.Modal -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /.activity -->
+
+    
+    <!-- Services --> 
+    <section id="services" class="section  bg-gray-lighter">
+      <div class="container-fluid">
+        <div class="row title text-center">
+          <h2 class="margin-top">Nos services</h2>
+        </div>
+        <div class="content row">
+          <div class="col-xs-12">
+            <div class="row">
+              <div class="col-lg-3 col-sm-6 col-xs-12">
+                <div class="activity text-center">
+                  <div class="cover" style="background:url('assets/img/services/formations.jpg'); background-size:cover;">
+                    <div class="overlay text-center">
+                      <h3 class="white">Formations</h3>
+                      <h5 class="light white">A partir de <span class="price">100€</span></h5>
+                    </div>
+                  </div>
+                  <div class="title">
+                    <h4>Formations</h4>
+                  </div>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#myModalFormations">Informations</button>
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModalFormations" tabindex="-1" role="dialog" aria-labelledby="myModalLabelFormations">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabelFormations">Formations</h4>
+                        </div>
+                        <div class="modal-body">
+                          <div class="text-justify">
+                            <ul class="white-list text-justify text-left">
+                              <li><strong>Passeport Canyon:</strong> 3 canyons d’initiation pour prendre le temps d’apprendre et se diriger vers l’autonomie.</li>
+                              <li><strong>Passeport Photos:</strong> 2 jours de photo pour apprendre à utiliser son appareil photo d’une manière optimale.</li>
+                              <li><strong>Passeport Péi:</strong> 2 jours pour apprendre et comprendre les différentes espèces endémiques</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Reserver</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- /.Modal -->
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6 col-xs-12">
+                <div class="activity text-center">
+                  <div class="cover" style="background:url('assets/img/services/stages.jpg'); background-size:cover;">
+                    <div class="overlay text-center">
+                      <h3 class="white">Stages</h3>
+                      <h5 class="light white">A partir de <span class="price">300€</span></h5>
+                    </div>
+                  </div>
+                  <div class="title">
+                    <h4>Stages</h4>
+                  </div>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#myModalStage">Informations</button>
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModalStage" tabindex="-1" role="dialog" aria-labelledby="myModalLabelStage">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabelStage">Stages</h4>
+                        </div>
+                        <div class="modal-body">
+                          <ul class="white-list text-justify text-left">
+                            <li><strong>«Rando-Photos»</strong> deux jours de randonnée dans les cirques avec bivouac et/ou gite ou l’on se laissera guider par nos envies de figer l’instant présent! Conseils, formation et itinéraires adapté selon le niveau photo et/ou la condition physique de chacun. Ouvert à tous, aucun pré-requis demandé. Selon conditions météo!</li>
+                            <li><strong>«Rando-Zen»</strong> 2 jours de Rando-Yoga avec nuit en gite. Conseils, formation et itinéraire adapté selon le niveau et/ou la condition physique de chacun. Ouvert à des non initiés au Yoga. Selon conditions météo!</li>
+                            <li><strong>«Canyon-Photos»</strong> 2 jours de Canyon avec nuit en gite. Conseils, formation et itinéraire adapté selon le niveau photo et/ou la condition physique de chacun. Ouvert à des pratiquants canyon, en bonne condition physique. Selon conditions météo!</li>
+                            <li><strong>«Trek-Photos»</strong> 4 jours dans les cirques avec nuit en gite et/ou bivouac, entre volcan; piton des neiges et foret primaire, venez prendre le temps de contempler les beautés de la nature réunionaise! Selon conditions météo!</li>
+                          </ul>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Reserver</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- /.Modal -->
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6 col-xs-12">
+                <div class="activity text-center">
+                  <div class="cover" style="background:url('assets/img/services/expeditions.jpg'); background-size:cover;">
+                    <div class="overlay text-center">
+                      <h3 class="white">Expéditions</h3>
+                      <h5 class="light white">Sur devis</h5>
+                    </div>
+                  </div>
+                  <div class="title">
+                    <h4>Expéditions</h4>
+                  </div>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#myModalExpe">Informations</button>
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModalExpe" tabindex="-1" role="dialog" aria-labelledby="myModalLabelExpe">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabelExpe">Expéditions</h4>
+                        </div>
+                        <div class="modal-body">
+                          <div class="text-justify">
+                            <ul class="white-list text-justify text-left">
+                              <li>3 jours de Canyon et/ou Trek à Madagascar</li>
+                              <li>3 jours de Canyon et/ou Trek à Rodrigues</li>
+                              <li>1 semaine de Canyon et/ou Trek en Afrique du sud</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Reserver</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- /.Modal -->
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6 col-xs-12">
+                <div class="activity text-center">
+                  <div class="cover" style="background:url('assets/img/services/stage.jpg'); background-size:cover;">
+                    <div class="overlay text-center">
+                      <h3 class="white">Projets personnalisés</h3>
+                      <h5 class="light white">Sur Devis</h5>
+                    </div>
+                  </div>
+                  <div class="title">
+                    <h4>Projets personnalisés</h4>
+                  </div>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#myModalProjet">Informations</button>
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModalProjet" tabindex="-1" role="dialog" aria-labelledby="myModalLabelProjet">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabelProjet">Projets personnalisés</h4>
+                        </div>
+                        <div class="modal-body">
+                          <div class="text-justify">
+                            Pour toute demande spécifique: Comité d'entreprise, Organisation d'un événement, Séminaires d'entreprise, Enterrement de vie de garçon et/ou de jeune fille, Handi-sport...Merci de nous faire une demande par mail comprenant le nombre de personnes, les dates prévues et les besoins spécifiques, nous vous donnerons une réponse et une devis personnalisé sous 72h!
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Reserver</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- /.Modal -->
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-offset-3 col-lg-3 col-sm-6 col-xs-12">
+                <div class="activity text-center">
+                  <div class="cover" style="background:url('assets/img/services/location.jpg'); background-size:cover;">
+                    <div class="overlay text-center">
+                      <h3 class="white">Location</h3>
+                      <h5 class="light white">A partir de <span class="price">20€</span> / jour</h5>
+                    </div>
+                  </div>
+                  <div class="title">
+                    <h4>Location</h4>
+                  </div>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#myModalLoc">Informations</button>
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModalLoc" tabindex="-1" role="dialog" aria-labelledby="myModalLabelLoc">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabelLoc">Location de materiel</h4>
+                        </div>
+                        <div class="modal-body">
+                          <div class="text-justify">
+                            Vous pouvez louer tout le matériel nécessaire à la pratique du canyonisme :
+                            <ul class="white-list text-justify text-left">
+                              <li><span class="price">Equipement partiel dés 20€</span>: Casque, baudrier équipé, sac.</li>
+                              <li><span class="price">Equipement complet dés 40€</span>: Casque, baudrier équipé, combinaison, chaussons, gants, sac.</li>
+                            </ul>
+                            Possibilité également de <span class="text-secondary">location de matériel technique</span> spécifique à l’activité Cordes,poignée jumar, croll, neuf, longes réglables, chaussures, sur devis.
+                          </div>
+                          <div class="text-justify">
+                            <br>
+                            Vous pouvez louer un appareil photo <span class="text-secondary">Olympus TG3 étanche dés</span> <span class="price">20€</span>. Vous pouvez également louer à partir de 30 euros du matériel plus spécifique, contenant un sac + boitier canon reflex + grand angle + télé objectif.
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Reserver</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- /.Modal -->
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6 col-xs-12">
+                <div class="activity text-center">
+                  <div class="cover" style="background:url('assets/img/services/stage.jpg'); background-size:cover;">
+                    <div class="overlay text-center">
+                      <h3 class="white">Bons cadeaux</h3>
+                      <h5 class="light white">Sur Devis</h5>
+                    </div>
+                  </div>
+                  <div class="title">
+                    <h4>Bons cadeaux</h4>
+                  </div>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#myModalProjet">Informations</button>
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModalProjet" tabindex="-1" role="dialog" aria-labelledby="myModalLabelProjet">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabelProjet">Bons cadeaux</h4>
+                        </div>
+                        <div class="modal-body">
+                          <div class="text-justify">
+                            Pour toute demande spécifique: Comité d'entreprise, Organisation d'un événement, Séminaires d'entreprise, Enterrement de vie de garçon et/ou de jeune fille, Handi-sport...Merci de nous faire une demande par mail comprenant le nombre de personnes, les dates prévues et les besoins spécifiques, nous vous donnerons une réponse et une devis personnalisé sous 72h!
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Reserver</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- /.Modal -->
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+      <div class="map-container">
+        <div id="map"></div>
+      </div>    
+          
+    </section><!-- /.Services -->
+
+
+    <!-- Subscribe --> 
+    <section id="subscribe" class="section bg-gray-lighten">
+      <div class="container-fluid">
+        <div class="row title text-center">
+          <h2 class="margin-top">Restons en contact!</h2>
+          <h4 class="light muted">Et assurez-vous de recevoir toute notre diffusion.</h4>
+        </div>
+        <div class="content row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="input-group input-group-lg">
+                <input class="form-control input-lg" id="search-church" type="text" placeholder="Entrez votre Email adresse">
+                <span class="input-group-btn">
+                    <button class="btn btn-lg btn-secondary" type="submit">Souscrire</button>
+                </span>
+            </div>
+            <div id="no-spam" class="wow fadeInUp animated centered justified" style="visibility: visible;">
+              <p class="text-center text-justify">* Nous nous engageons à ne pas vous spammer et à ne divulguer aucune information personnelle à des tiers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /.subscribe -->
+
+
+    <!-- Association --> 
+    <section id="association" class="section bg-gray-lighter">
+      <div class="container-fluid">
+        <div class="row title text-center">
+          <h2 class="margin-top">L'entreprise</h2>
+          <h4 class="light muted">Outdoor <em> eXperience</em> est un collectif de passionés par les sports de pleine nature.</h4>
+        </div>
+        <div class="row content">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="well">
+              <div class="text-entreprise text-center text-justify">
+                Outdoor Xperience est une société spécialisée dans les sports de Montagne, notre objectif principal est de vous transmettre notre passion et de promouvoir la beauté de l'île par des activités de pleine nature.<br>
+                Nous souhaitons, vous faire découvrir des lieux incroyables et bien souvent inconnus du grand public !<br>
+                Il y a bien des ravines cachées, des lieux insolites, des tunnels méconnus à explorer... Des personnes à rencontrer... Dans ce collectif de passionnés, tous sont des spécialistes reconnus et engagés à vous faire vivre des Xperiences uniques.<br>
+                Notre collectif s'inscrit également dans une démarche éthique, durable et environnementale, conscients du fait que nous avons un impact sur notre environnement, conscients du fait, qu'il faut sensibiliser le plus de personnes possible à la préservation de cet équilibre fragile, conscients du fait, qu'il faut respecter ce lieu inscrit au patrimoine mondial! Chaque professionnel, s'engage à respecter les principes liés à la charte qualité tourisme de la Réunion, à mettre en œuvre les recommandations des grandes institutions, agissants pour la protection du milieux naturel, tel que le Parc national de la Réunion ou les fédérations/syndicats de professionnels, œuvrant pour le développement raisonné et raisonnable de la pratique sportive : la Ffme, la Ffs, le Snapec, le Bat, la Snam, en sont des exemples. En bref, prendre du plaisir en pleine conscience de notre environnement, en toute sécurité, selon vos envies, selon votre niveau et selon la météo !<br>
+                En quelques verbes, Outdoor Xperience, c'est :<br>
+                <ul>
+                  <li>Transmettre, parce que nous avons l'impertinence de croire que cela peut vous plaire !</li>
+                  <li>Partager, parce que c'est toujours mieux à plusieurs !</li>
+                  <li>Découvrir, parce que c'est enrichissant !</li>
+                  <li>Se dépasser, pour ressentir des émotions !</li>
+                  <li>S'émouvoir, parce que nous sommes amoureux de l'île intense !</li>
+                </ul>
+                <br>
+                Alon bat'karé ensemb...
+              </div>
+              
+              <button class="btn btn-lg btn-secondary" role="button" data-toggle="collapse" href="#collapseTeam" aria-expanded="false" aria-controls="collapseTeam">
+                En savoir plus
+              </button>
+              <div class="collapse" id="collapseTeam">
+                <div class="row">
+                  <div class="col-md-">
+                    Team
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+      <div class="copy">
+        <span>Copyright &copy; IRT/Frog 974</span>
+      </div>
+    </section><!-- /.association -->
+
+    
+    <!-- Carousel -->
+    <section id="carousel" class="section bg-tertiary">
+      <div class="container-fluid">
+        <div class="row title text-center">
+          <h2 class="margin-top">On parle de nous!</h2>
+          <h4 class="light muted">Partageons vos retours sur Outdoor eXperience</h4>
+        </div>
+        <div class="row content">
+          <div id="myCarousel2" class="carousel slide bg-tertiary" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel2" data-slide-to="1"></li>
+              <li data-target="#myCarousel2" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <div id="slide-img-1" class="fill fill-scroll"></div>
+                <div class="container-fluid">
+                  <div class="carousel-caption">
+                        <i class="blockquote fa fa-twitter"></i><br>
+                        <span class="blockquote"><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. <i class="fa fa-quote-right"></i></span><br>
+                        <span class="source">Someone famous in <cite title="Source Title">Source Title</cite></span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div id="slide-img-2" class="fill fill-scroll"></div>
+                <div class="container-fluid">
+                  <div class="carousel-caption">
+                        <i class="blockquote fa fa-facebook"></i><br>
+                        <span class="blockquote"><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. <i class="fa fa-quote-right"></i></span><br>
+                        <span class="source">Someone famous in <cite title="Source Title">Source Title</cite></span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div id="slide-img-3" class="fill fill-scroll"></div>
+                <div class="container-fluid">
+                  <div class="carousel-caption">
+                        <i class="blockquote fa fa-twitter"></i><br>
+                        <span class="blockquote"><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. <i class="fa fa-quote-right"></i></span><br>
+                        <span class="source">Someone famous in <cite title="Source Title">Source Title</cite></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--
+            <a class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel2" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+            -->
+          </div><!-- /.carousel -->
+        </div>  
+      </div>
+    </section><!-- /.carousel -->
+
+    
+    <!-- Medias -->
+    <section id="medias" class="section bg-white">
+      <div class="container-fluid">
+        <div class="row title text-center">
+          <h2 class="margin-top">Medias</h2>
+          <!--<h4 class="light muted">Lorem ipsum dolor sit amet</h4>-->
+        </div>
+        <div class="row content">
+          <div class="col-sm-12">
+            <div align="center" class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rd7SHHresYM?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </section><!-- /.medias -->
+
+    
+    <!-- Shop --> 
+    <section id="shop" class="section bg-gray-lighter">
+      <div class="container-fluid">
+        <div class="row title text-center">
+          <h2 class="margin-top">La boutique</h2>
+          <!--<h4 class="light muted">Lorem ipsum dolor sit amet</h4>-->
+        </div>
+        <div class="row content">
+          <div class="col-lg-12">
+          </div>
+        </div>  
+      </div>
+    </section><!-- /.shop -->
+
+
+    <!-- Contact --> 
+    <section id="contact" class="section bg-gray-lighter">
+      <div class="container-fluid">
+        <div class="row title text-center">
+          <h2 class="margin-top">Contact</h2>
+          <h4 class="light muted">Pour toutes vos questions et/ou demandes</h4>
+        </div>
+        <div class="row content">
+                <div class="col-lg-12">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn btn-lg btn-secondary btn-heading">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+        </div>  
+      </div>
+    </section><!-- /.contact -->
+
+    
+    <!-- Social -->
+    <section id="social" class="section bg-white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Outdoor Experience 2016</span><br>
+                    <span class="copyright">Copyright &copy; Crédit photo IRT/Frog974</span><br>
+                    <span class="copyright">Copyright &copy; Crédit photo IRT/lionel_ghighi</span><br>
+                    <span class="copyright">Copyright &copy; Crédit photo IRT/sebastien_conejero</span><br>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi-K8q65y2MxD_nTmAvcDRy9tL8RNF3Gs&callback=initMap" async defer></script>
+    

@@ -3,9 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
-
 import { AngularFireModule } from 'angularfire2';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { CanyonsComponent } from './canyons/canyons.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -18,12 +21,15 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    CanyonsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],

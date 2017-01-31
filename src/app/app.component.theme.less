@@ -1,0 +1,900 @@
+@import "../bootstrap-custom-3.3.7/less/variables.less";
+@import "variables.less";
+@import "mixins.less";
+
+// Global Components
+
+html,body{
+  margin: 0;
+  height:100%;
+  width:100%;
+}
+
+body {
+  padding-top: 80px;    // navbar : 30px + 50px
+  .body-font;
+}
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1280px;
+}
+
+.text-muted {
+  color: @gray-light;
+}
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+.text-primary {
+  color: @theme-primary;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+p.large {
+  font-size: 16px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+  outline: none;
+}
+
+a {
+  color: @theme-primary;
+}
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+  color: darken(@theme-primary, 10%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  .heading-font;
+  font-weight: 700;
+}
+
+.black {
+    font-weight: 900;
+}
+.bold {
+    font-weight: 700;
+}
+.medium {
+    font-weight: 400;
+}
+.regular {
+    font-weight: 400;
+}
+.light {
+    font-weight: 300;
+}
+.thin {
+    font-weight: 100;
+}
+
+.small-font {
+  font-size: 10px;
+}
+
+.white {
+	color: @white;
+}
+.light-white {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+.text-desc {
+  margin-top:20px;
+}
+
+.img-centered {
+  margin: 0 auto;
+}
+
+.clear-margin-left {
+  margin-left: -15px;
+}
+.clear-margin-right {
+  margin-right: -15px;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+@media(min-width:992px) {
+  .hover-scale:hover {
+    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -o-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+  }
+}
+
+
+// Preloader
+
+#preloader {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#fff; /* change if the mask should have another color then white */
+    z-index:99; /* makes sure it stays on top */
+}
+
+#status {
+    width:200px;
+    height:200px;
+    position:absolute;
+    left:50%; /* centers the loading animation horizontally one the screen */
+    top:50%; /* centers the loading animation vertically one the screen */
+    background-image:url(../img/status.gif); /* path to your loading animation */
+    background-repeat:no-repeat;
+    background-position:center;
+    margin:-100px 0 0 -100px; /* is width and height divided by two */
+}
+
+
+// Social
+
+ul.social-buttons {
+      margin-bottom: 0;
+      li {
+          a {
+              display: block;
+              background-color: @gray-darker;
+              height: 30px;
+              width: 30px;
+              border-radius: 100%;
+              font-size: 15px;
+              line-height: 30px;
+              color: white;
+              outline: none;
+              -webkit-transition: all 0.3s;
+              -moz-transition: all 0.3s;
+              transition: all 0.3s;
+              &:hover,
+              &:focus,
+              &:active {
+                  background-color: @theme-primary;
+              }
+          }
+      }
+}
+
+#social {
+    padding: 25px 0;
+    text-align: center;
+    span.copyright {
+        line-height: 40px;
+        .heading-font;
+        text-transform: none;
+    }
+    ul.quicklinks {
+        margin-bottom: 0;
+        line-height: 40px;
+        .heading-font;
+        text-transform: none;
+    }
+}
+
+
+// Restyled Primary Buttons
+
+.btn-primary {
+    .button-variant(white; @theme-primary; @theme-primary);
+    .heading-font;
+    font-weight: 700;
+}
+.btn-secondary {
+    .button-variant(white; @theme-secondary; @theme-secondary);
+    .heading-font;
+    font-weight: 700;
+}
+.btn-tertiary {
+    .button-variant(white; @theme-tertiary; @theme-tertiary);
+    .heading-font;
+    font-weight: 700;
+}
+.btn-heading {
+    .heading-font;
+    font-weight: 700;
+    padding: 15px 20px;
+    border-radius: 3px; 
+}
+@media(min-width:480px) {
+  .btn-heading {
+    font-size: 18px;
+    padding: 20px 40px;
+  }
+}
+
+
+// Navigation Bar
+
+.navbar {
+  .heading-font;      
+}
+
+nav.navbar-fixed-top {
+	box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-top {
+  //z-index: 9999;
+  min-height:30px !important;
+  li > a, .navbar-brand {
+    padding-top:5px !important; 
+    padding-bottom:0 !important;
+    height: 30px;
+  }
+  
+  .navbar-toggle {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.navbar-main {
+  margin-top: 30px;
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .nav {
+    li {
+      a {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+// Global Section Styles
+
+section {
+    padding: @section-padding 0;
+    .content {
+      padding: @section-content-padding 0;
+    }
+    position: relative;
+    h2.section-heading {
+        font-size: 40px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    h3.section-subheading {
+        font-size: 16px;
+        .serif-font;
+        text-transform: none;
+        font-style: italic;
+        font-weight: 400;
+        margin-bottom: 75px;
+    }
+}
+
+
+.bg-primary {
+    background-color: @theme-primary;
+    color: @white;
+}
+.bg-secondary {
+    background-color: @theme-secondary;
+    color: @white;
+}
+.bg-tertiary {
+    background-color: @theme-tertiary;
+    color: @white;
+}
+
+.bg-white {
+    background-color: @white;
+    color: @gray-darker;
+}
+.bg-gray-lighter {
+    background-color: @gray-lighter;
+    color: @gray-darker;
+}
+.bg-gray-lighten {
+    background-color: @gray-lighten;
+    color: @white;
+}
+.bg-gray-light {
+    background-color: @gray-light;
+    color: @white;
+}
+.bg-gray {
+    background-color: @gray;
+    color: @white;
+}
+.bg-gray-dark {
+    background-color: @gray-dark;
+    color: @white;
+}
+.bg-gray-darker {
+    background-color: @gray-darker;
+    color: @white;
+}
+.texture-layer {
+    background: url(../img/texture_layer.png) repeat;
+}
+
+.cut-top {
+	content: ' ';
+	position: absolute;
+	z-index: 1;
+	top: -80px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-top: 80px solid transparent;
+	border-right: 30px solid white;
+}
+
+.cut-bottom {
+	content: ' ';
+	position: absolute;
+	z-index: 1;
+	bottom: -80px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-bottom: 80px solid transparent;
+	border-left: 30px solid white;
+}
+
+.text-secondary {
+  text-shadow: 1px 1px 3px rgba(0,0,0, 0.5);
+  color: @theme-secondary;
+  font-weight: 700;
+}
+.price {
+  text-shadow: 1px 1px 3px rgba(0,0,0, 0.5);
+  color: @theme-secondary;
+  font-weight: 700;
+}
+.copy {
+  font-size:10px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  color: @white;
+}
+
+
+// Header
+
+#header {  
+  height:100%;
+    
+  #video-fond {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  #video-fond > video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  /* 1. Pas de support d'object-fit */
+  @media (min-aspect-ratio: 16/9) {
+    #video-fond > video {
+      height: 300%;
+      top: -100%;
+    }
+  }
+  @media (max-aspect-ratio: 16/9) {
+    #video-fond > video {
+      width: 300%;
+      left: -100%;
+    }
+  }
+  /* 2. En cas de support d'object-fit, écrase le 1 */
+  @supports (object-fit: cover) {
+    #video-fond > video {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+  }
+  
+  .header-text {
+    position:absolute;
+    bottom:100px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    text-shadow: 1px 2px 7px rgba(0,0,0, 0.5);
+    color: white;
+    vertical-align: middle;
+
+    .heading {
+
+      //padding: 20px;
+      //background: rgba(255, 255, 255, 0.5);
+      //border-color: rgba(255, 255, 255, 0.85);
+
+      h1 {
+        font-size:54px;
+        padding-bottom:50px;
+      }
+      h2 {
+        font-size:32px;
+      }
+    }
+  }
+  
+  .fill {
+    height: 100%;
+  }
+}
+
+// Carousel
+#header-img-1 {
+  background-image: url("../img/carousel/montagne_mafate18_lever_du_soleil_-_CREDIT_IRT_-_frog_974_photographies_dts_12_2017.jpg");
+}
+#header-img-2 {
+  background-image: url("../img/carousel/montagne_piton_des_neiges09_commerson_au_dessus_des_nuages_-_CREDIT_IRT_-_frog_974_photographies_dts_07_2018.jpg");
+}
+#header-img-3 {
+  background-image: url("../img/carousel/montagne_salazie17_cirque_-_CREDIT_IRT_-_frog_974_photographies_dts_12_2017.jpg");
+}
+
+#myCarousel2{height:200px;}
+.item,.active{height:100%;}
+.carousel-inner{height:100%;}
+
+ /* Responsive image */
+.fill {
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.fill-fixed {
+  background-attachment: fixed;
+}
+.fill-scroll {
+  background-attachment: scroll;
+}
+
+.intro-text {
+    padding-bottom: 50px;
+    .intro-lead-in {
+        .serif-font;
+        font-style: italic;
+        font-size: 22px;
+        line-height: 22px;
+        margin-bottom: 25px;
+    }
+    .intro-heading {
+        .heading-font;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 50px;
+        margin-bottom: 25px;
+    }
+}
+
+// Breadcrumb
+#breadcrumb {
+  padding-top: 5px;
+  padding-bottom: 0px;
+}
+.breadcrumb {
+  border-bottom: 2px solid @gray-lighter;
+}
+
+// Activity
+.header-activity {
+  height: 400px;
+  background-image: url("../img/activity/canyon/header.jpg");
+  background-position: bottom center;
+  
+  .header-text{
+    margin-top: 200px;
+    text-shadow: 1px 2px 7px rgba(0,0,0, 0.5);
+  }  
+}
+.footer-activity {
+  height: 200px;
+  background-image: url("../img/activity/canyon/footer.png");
+  background-position: bottom center;
+}
+
+@media(max-width:@screen-md-max) {
+  #activity {
+    .activity {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+#activity,
+#services {
+  .section{
+    padding-top:0px;
+    
+    .text-intro {
+      margin-top:20px;
+    }
+
+    .canyon {
+      .price{
+        color: @white;
+      }
+    }
+    .canyon-primary {
+     	border-left: 10px solid @theme-primary;
+      .overlay {
+        background: @theme-primary !important;
+      }
+    }
+    .canyon-success {
+     	border-left: 10px solid @theme-secondary;    
+      .overlay {
+        background: @theme-secondary !important;
+      }
+    }
+    .canyon-danger {
+     	border-left: 10px solid @theme-danger;    
+      .overlay {
+        background: @theme-danger !important;
+      }
+    }
+
+    
+    .canyon {
+      padding-bottom:0px;
+      background-color: @gray-lighter;
+      h3{
+        margin-top:10px;
+      }
+      
+      .canyon-left{
+        padding: 0px;
+      }
+      .canyon-body {
+        padding: 20px;
+        padding-bottom: 0px;
+      }
+    }
+  }
+
+  padding-bottom: 0;
+  .activity {
+    margin-bottom:40px;
+    padding-bottom: 60px;
+    background: white;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.07);
+    
+    .cover {
+      width: 100%;
+      height: auto;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    
+      .overlay {
+        height: 250px;
+        padding-top: 60px;
+        opacity: 0;
+        background: @theme-primary;
+        -webkit-transition: opacity 0.45s ease;
+        transition: opacity 0.45s ease;    
+      }
+    }
+    .avatar {
+      position: relative;
+      z-index: 2;
+      margin-top: -60px;
+      border-radius: 50%;
+      border: 7px solid @white;
+    }
+    .title {
+      margin: 50px 0;
+    }
+    
+    &:hover {
+      .cover {
+        .overlay {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  
+  .well {  
+    p {
+      font-size: 15px;
+    }
+    //background-color: @gray-95;
+    padding: 30px;
+    border: none;
+    border-bottom: 5px solid @theme-primary;
+    box-shadow: none;
+  }
+  
+  .team{
+    margin-top: 40px;
+    .avatar-team {
+      border-radius: 50%;
+      border: 7px solid @gray-lighter;
+    }
+  }
+}
+
+
+// Map section
+
+.map-container {
+}
+#map {
+  min-height:500px;  
+  width:100%;
+}
+
+
+// Subscribe
+
+#subscribe {
+
+  #no-spam {
+    margin-top:5px;
+  }
+
+}
+
+
+// Services
+
+#services {
+  //color: @white;
+	//background-color: @gray-lighter;
+	//background: @gray-lighter url('../img/irt/coucher_de_soleil21_sur_lagon_de_lermitage_-_CREDIT_IRT_-_frog_974_photographies_dts_12_2017.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	background-size: cover;
+	-webkit-transition: background-image 0.6s linear 0.3s;
+	transition: background-image 0.6s linear 0.3s;
+}
+.services {
+  .service {
+    background-color: #00a8ff;
+    margin-top: 10px;
+  
+    .box-main {
+      padding:30px;
+    }
+    .box-second {
+      padding:30px;
+    }
+  }
+  .service.service-primary {
+    background-color: @theme-primary;
+  }
+  .service.service-secondary {
+    background-color: @theme-secondary;
+  }
+  .service.service-tertiary {
+    background-color: @theme-tertiary;
+  }
+  .service.service-default {
+    background-color: @gray-lighten;
+  }
+
+}
+
+
+// Carousel
+
+.carousel {
+  .carousel-caption {
+    padding-bottom: 50px;
+    left: 10%;
+    right: 10%;
+    text-shadow: none;
+  }
+  .blockquote {
+    font-size: 25px;
+    color: @white;
+  }
+  .source {
+    font-size: 18px;
+    color: @white;
+  }
+}
+
+
+// Statistics
+
+#statistics { 
+  //background: url(../img/carousel/01.jpg) 50% 0 no-repeat fixed;
+
+  .fun-box {
+      text-align: center;
+      padding: 50px 20px;
+      margin-top: 50px;
+      //background: rgba(255, 255, 255, 0.1);
+      background-color: @gray;
+    i {
+      display: block;
+      font-size: 60px;
+      font-weight: 700;
+      color: white;
+    }
+    p {
+      color: white;
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+    .fun {
+      color: @theme-tertiary;
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 70px;
+      text-shadow: 1px 1px 1px #444;
+    }
+  }
+}
+
+
+// Medias
+
+#medias {
+  .title {
+    margin-bottom: @section-padding;
+  }
+}
+
+
+// Association
+
+#association {
+  background: @gray-lighter url('../img/irt/coucher_de_soleil21_sur_lagon_de_lermitage_-_CREDIT_IRT_-_frog_974_photographies_dts_12_2017.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	background-size: cover;
+	-webkit-transition: background-image 0.6s linear 0.3s;
+	transition: background-image 0.6s linear 0.3s;
+  
+  .title {
+    color: @white;
+  }
+  
+  .well {  
+    background: rgba(255, 255, 255, 0.8); 
+    p {
+      font-size: 14px;
+    }
+    padding: 50px;
+    border-bottom: 5px solid @theme-primary;
+  }
+}
+
+
+// Contact Section
+
+#contact {
+    background-color: @theme-primary;
+    background-image: url('../img/map-image.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: scroll;
+    color: @white;
+    
+    .form-group {
+        margin-bottom: 25px;
+        input,
+        textarea {
+            padding: 20px;
+        }
+        input.form-control {
+            height: auto;
+        }
+        textarea.form-control {
+            height: 236px;
+        }
+    }
+    .form-control:focus {
+        border-color: @theme-primary;
+        box-shadow: none;
+    }
+    ::-webkit-input-placeholder {
+       .heading-font;
+       font-weight: 700;
+       color: @gray-light;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+       .heading-font;
+       font-weight: 700;
+       color: @gray-light;
+    }
+    ::-moz-placeholder {  /* Firefox 19+ */
+       .heading-font;
+       font-weight: 700;
+       color: @gray-light;
+    }
+    :-ms-input-placeholder {  
+       .heading-font;
+       font-weight: 700;
+       color: @gray-light;
+    }
+    .text-danger {
+        color: @theme-danger;
+    }
+}
+
+
+// Highlight Color Customization
+
+::-moz-selection {
+    text-shadow: none;
+    background: @theme-primary;
+}
+
+::selection {
+    text-shadow: none;
+    background: @theme-primary;
+}
+
+img::selection {
+    background: transparent;
+}
+
+img::-moz-selection {
+    background: transparent;
+}
+
+body {
+    webkit-tap-highlight-color: @theme-primary;
+}
