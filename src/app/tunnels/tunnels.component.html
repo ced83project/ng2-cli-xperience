@@ -1,0 +1,111 @@
+    <!-- Header --> 
+    <header id="header-activity" class="header-activity header-activity-tunnel fill fill-scroll">
+      <div class="container-fluid">
+        <div class="header-text row title text-center">
+					<div class="col-md-12">
+						<h1 id="header_text_h1" class="white">Tunnel de lave</h1>
+          </div>
+				</div>
+      </div>
+    </header> <!-- /.header -->
+
+    <!-- Breadcrumb --> 
+    <section id="breadcrumb" class="bg-white">
+      <div class="container-fluid">
+        <ol class="breadcrumb">
+          <li>
+            <a [routerLink]="['/home']" fragment="top">Accueil</a>
+          </li>
+          <li class="active">Tunnel de lave</li>
+        </ol>
+      </div>
+    </section> <!-- /.breadcrumb -->
+    
+    <!-- Activity --> 
+    <div id="activity">
+      <!-- Tunnel de lave --> 
+      <section id="tunnel" class="section bg-white">
+        <div class="container-fluid">
+          <div class="row title text-center">
+            <h2 class="margin-top">Les tunnels de lave</h2>
+            <h4 class="light muted">Xperience tunnels de lave, c'est quoi?</h4>
+            <div class="col-xs-12 col-md-offset-2 col-md-8 text-center text-justify text-desc">
+                Vivre un eXpérience sous terre, c’est partir à l’aventure, pour comprendre les mystères de la création de ce patrimoine volcanique unique. Découvrez de nouveaux horizons, être sensibiliser à la fragilité de ce milieux et partir à la découverte de formes inédites... Que se cache t’il donc sous les différentes coulées de lave de l’île? Apprendre pour comprendre...<br>
+                <br>
+                3 circuits par ordre de difficulté vous sont donc proposés du vert au bleu au rouge!<br>
+                <ul>
+                  <li><strong class="text-">Xperience Verte:</strong> pour découvrir l'activité</li>
+                  <li><strong class="text-">Xperience Bleu:</strong> pour plus de sensations</li>
+                  <li><strong class="text-">Xperience Rouge:</strong> pour les sportifs aguerris à l'activité</li>
+                </ul>
+            </div>
+          </div>
+          <div class="content row">
+            <div class="col-xs-12">
+              <h3 class="activity-card-level light muted">Xperience Verte</h3>
+            </div>
+            <div *ngFor="let tunnel of (tunnels | async | tunnelLevelFilter:'1')" class="col-lg-12 col-sm-6 col-xs-12">
+              <div class="media activity activity-card activity-card-success">
+                <div class="col-lg-3 activity-card-left">
+                  <div class="cover" [ngStyle]="{'background':'url(assets/img/activity/tunnel/' + tunnel.img + ')', 'background-size':'cover'}">
+                    <div class="overlay overlay-activity text-center">
+                      <h3 class="activity-card-level white">{{tunnel.level}}</h3>
+                      <h5 class="light white">Tarif: <span class="price">{{tunnel.price}}</span> / personne</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-9 activity-card-body">
+                  <div class="row">
+                    <div class="col-lg-8 col-md-12">
+                      <h3 class="media-heading">{{tunnel.name}}</h3>
+                      <h4 class="light">{{tunnel.subTitle}}</h4>
+                    </div>
+                    <div class="visible-lg col-lg-2">
+                      <button type="button" style="width:100%;" class="btn btn-secondary" (click)="onSelect(tunnel)">Photos</button>
+                    </div>
+                    <div class="visible-lg col-lg-2">
+                      <button type="button" style="width:100%;" class="btn btn-secondary" (click)="onSelect(tunnel)">Reserver</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <p>{{tunnel.desc}}</p>
+                      <div class="row">
+                        <div class="col-lg-5">
+                          <ul>
+                            <li><strong>Marche d'approche:</strong> {{tunnel.approche}}</li>
+                            <li><strong>Marche Retour: </strong> {{tunnel.return}}</li>
+                            <li><strong>Temps de tunnel:</strong> {{tunnel.duration}}</li>
+                          </ul>
+                        </div>
+                        <div class="col-lg-7">
+                          <ul>
+                            <li><strong>Rdv:</strong> {{tunnel.rdv}}</li>
+                            <li><strong>{{tunnel.from}}</strong></li>
+                            <li><strong>Tarif:</strong> {{tunnel.price}}/personne</li>
+                          </ul>
+                        </div>
+                        <div class="hidden-lg col-xs-6">
+                          <button type="button" style="width:100%;margin-bottom:10px;" class="btn btn-secondary" (click)="onSelect(tunnel)">Photos</button>
+                        </div>
+                        <div class="hidden-lg col-xs-6">
+                          <button type="button" style="width:100%;margin-bottom:10px;" class="btn btn-secondary" (click)="onSelect(tunnel)">Reserver</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section><!-- /.tunnelisme -->
+    </div><!-- /.activity -->
+
+    
+    <!-- Footer --> 
+    <footer id="footer-activity" class="footer-activity footer-activity-tunnel fill fill-scroll">
+      <div class="container-fluid">
+      </div>
+    </footer> <!-- /.footer -->

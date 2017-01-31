@@ -11,6 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { CanyonsComponent } from './canyons/canyons.component';
 import { CanyonService }     from './canyons/canyon.service';
 import { CanyonLevelFilter } from './canyons/canyon.pipe';
+import { TunnelsComponent } from './tunnels/tunnels.component';
+import { TunnelService }     from './tunnels/tunnel.service';
+import { TunnelLevelFilter } from './tunnels/tunnel.pipe';
 
 // Must export the config
 export const firebaseConfig = {
@@ -26,7 +29,9 @@ export const firebaseConfig = {
     AppComponent,
     HomeComponent,
     CanyonsComponent,
-    CanyonLevelFilter
+    CanyonLevelFilter,
+    TunnelsComponent,
+    TunnelLevelFilter
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,10 @@ export const firebaseConfig = {
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [CanyonService],
+  providers: [
+    CanyonService, 
+    TunnelService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

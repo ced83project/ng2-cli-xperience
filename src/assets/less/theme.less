@@ -579,7 +579,6 @@ section {
 // Activity
 .header-activity {
   height: 400px;
-  background-image: url("../img/activity/canyon/header.jpg");
   background-position: bottom center;
   
   .header-text{
@@ -589,9 +588,10 @@ section {
 }
 .footer-activity {
   height: 200px;
-  background-image: url("../img/activity/canyon/footer.png");
   background-position: bottom center;
 }
+
+
 
 @media(max-width:@screen-md-max) {
   #activity {
@@ -610,24 +610,24 @@ section {
       margin-top:20px;
     }
 
-    .canyon {
+    .activity-card {
       .price{
         color: @white;
       }
     }
-    .canyon-primary {
+    .activity-card-primary {
      	border-left: 10px solid @theme-primary;
       .overlay {
         background: @theme-primary !important;
       }
     }
-    .canyon-success {
+    .activity-card-success {
      	border-left: 10px solid @theme-secondary;    
       .overlay {
         background: @theme-secondary !important;
       }
     }
-    .canyon-danger {
+    .activity-card-danger {
      	border-left: 10px solid @theme-danger;    
       .overlay {
         background: @theme-danger !important;
@@ -635,20 +635,24 @@ section {
     }
 
     
-    .canyon {
+    .activity-card {
       padding-bottom:0px;
       background-color: @gray-lighter;
       h3{
         margin-top:10px;
       }
       
-      .canyon-left{
+      .activity-card-left{
         padding: 0px;
       }
-      .canyon-body {
+      .activity-card-body {
         padding: 20px;
         padding-bottom: 0px;
       }
+    }
+    
+    .activity-card-level {
+      text-transform: none;
     }
   }
 
@@ -673,6 +677,11 @@ section {
         background: @theme-primary;
         -webkit-transition: opacity 0.45s ease;
         transition: opacity 0.45s ease;    
+      }
+      
+      .overlay-activity {
+        height: 300px;
+        padding-top: 80px;
       }
     }
     .avatar {
