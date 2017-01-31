@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CanyonsComponent } from './canyons/canyons.component';
+import { CanyonService }     from './canyons/canyon.service';
+import { CanyonLevelFilter } from './canyons/canyon.pipe';
 
 // Must export the config
 export const firebaseConfig = {
@@ -23,7 +25,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     HomeComponent,
-    CanyonsComponent
+    CanyonsComponent,
+    CanyonLevelFilter
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,7 @@ export const firebaseConfig = {
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [CanyonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
