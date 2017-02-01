@@ -101,7 +101,7 @@
               <h3 class="activity-card-level light muted">Xperience Bleu</h3>
             </div>
             <div *ngFor="let canyon of (canyons | async | canyonLevelFilter:'2')" class="col-lg-12 col-sm-6 col-xs-12">
-              <div class="media activity activity-card activity-card-success">
+              <div class="media activity activity-card activity-card-primary">
                 <div class="col-lg-3 activity-card-left">
                   <div class="cover" [ngStyle]="{'background':'url(assets/img/activity/canyon/' + canyon.img + ')', 'background-size':'cover'}">
                     <div class="overlay overlay-activity text-center">
@@ -157,7 +157,7 @@
               <h3 class="activity-card-level light muted">Xperience Rouge</h3>
             </div>
             <div *ngFor="let canyon of (canyons | async | canyonLevelFilter:'3')" class="col-lg-12 col-sm-6 col-xs-12">
-              <div class="media activity activity-card activity-card-success">
+              <div class="media activity activity-card activity-card-danger">
                 <div class="col-lg-3 activity-card-left">
                   <div class="cover" [ngStyle]="{'background':'url(assets/img/activity/canyon/' + canyon.img + ')', 'background-size':'cover'}">
                     <div class="overlay overlay-activity text-center">

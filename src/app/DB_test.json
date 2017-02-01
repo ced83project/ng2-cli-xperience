@@ -1,14 +1,4 @@
 {
-  "items" : [
-      {
-          "prop1":"value1",
-          "prop2":"value2"
-      },
-      {
-          "prop1":"value3", 
-          "prop2":"value4"
-      }
-  ],
   "canyons" : [
     {
         "id": "1",
