@@ -408,7 +408,27 @@
         </div>
       </div>
       <div class="map-container">
-        <div id="map"></div>
+        <sebm-google-map 
+          [latitude]="lat"
+          [longitude]="lng"
+          [zoom]="zoom"
+          [scrollwheel]="false">
+          
+          <sebm-google-map-marker 
+              *ngFor="let m of markers; let i = index"
+              (markerClick)="clickedMarker(m.label, i)"
+              [latitude]="m.lat"
+              [longitude]="m.lng"
+              [label]="m.label">
+              
+            <sebm-google-map-info-window>
+              <strong>{{m.name}}</strong>
+            </sebm-google-map-info-window>
+            
+          </sebm-google-map-marker>
+          
+        </sebm-google-map>
+    
       </div>    
           
     </section><!-- /.Services -->
@@ -657,7 +677,4 @@
         </div>
     </section>
 
-    
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi-K8q65y2MxD_nTmAvcDRy9tL8RNF3Gs&callback=initMap" async defer></script>
     

@@ -107,5 +107,26 @@
         "rdv": "Parking de la vierge au parasol à 08h00 au lieu dit du grand brulé",
         "from": "A partir de 15 ans"
     }
+  ],
+  "locations" : [
+    {
+        "lat" : "-20.947537546905576",
+        "lng" : "55.58349258274744",
+        "name" : "CANYON STE SUZANNE",
+        "color" : "005EB8",
+        "label" : "I"
+    }, {
+        "lat" : "-21.1387034944479596",
+        "lng" : "55.44022240675986",
+        "name" : "CANYON MINI FLEURS JAUNE",
+        "color" : "005EB8",
+        "label" : "I"
+    }, {
+        "lat" : "-21.312974009645174",
+        "lng" : "55.64131088554859",
+        "name" : "RANDO AQUATIQUE PETIT GALET",
+        "color" : "005EB8",
+        "label" : "I"
+    }
   ]
 }

@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AngularFireModule } from 'angularfire2';
-import { CarouselModule } from 'ng2-bootstrap';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { LocationService }     from './home/location.service';
 import { CanyonsComponent } from './canyons/canyons.component';
 import { CanyonService }     from './canyons/canyon.service';
 import { CanyonLevelFilter } from './canyons/canyon.pipe';
@@ -40,9 +41,12 @@ export const firebaseConfig = {
     HttpModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    CarouselModule.forRoot()
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAi-K8q65y2MxD_nTmAvcDRy9tL8RNF3Gs'
+    })
   ],
   providers: [
+    LocationService, 
     CanyonService, 
     TunnelService
   ],
