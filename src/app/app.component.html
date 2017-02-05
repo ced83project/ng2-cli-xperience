@@ -22,10 +22,9 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden"><a href="#page-top"></a></li>
                     <li><a class="page-scroll" href="assets/files/Notice d'inscription Outdoor eXperience.pdf">Reserver</a></li>
-                    <!--
-                    <li><a class="page-scroll" href="#">Sign up</a></li>
-                    <li><a class="page-scroll" href="#">Login</a></li>
-                    -->
+                    <li><a class="" href="javascript:void(0)" *ngIf="!isLoggedIn" (click)="login()">Login</a></li>
+                    <li><a class="" href="javascript:void(0)" *ngIf="isLoggedIn">{{ (af.auth | async)?.auth.displayName }}</a></li>
+                    <li><a class="" href="javascript:void(0)" *ngIf="isLoggedIn" (click)="logout()">Logout</a></li>
                     <li><a class="page-scroll" href="#"><span class="flag-icon flag-icon-fr"></span> FR</a></li>
                 </ul>
             </div>

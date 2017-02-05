@@ -1,16 +1,13 @@
-import { Component } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { AngularFire, AuthProviders } from 'angularfire2';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
-})
-export class AppComponent {
-  public isLoggedIn: boolean;
-  public user = {};
+@Injectable()
+export class AuthService {
+
+  isLoggedIn: boolean = false;
+  user = {};
   
-  constructor( public af: AngularFire ) { 
+  constructor( public af: AngularFire ) {
     this.af.auth.subscribe(user => {
       if(user) {
         // user logged in
@@ -23,18 +20,21 @@ export class AppComponent {
         this.user = {};
       }
     });
-    
   }
   
-  login() {
+  doLoginWithGoogle() {
+    this.af.auth.login({
+      provider: AuthProviders.Google
+    });
+  }
+  doLoginWithFacebook() {
     this.af.auth.login({
       provider: AuthProviders.Facebook
     });
   }
    
-  logout() {
+  doLogout() {
     this.af.auth.logout();
   }
-  
   
 }

@@ -1,5 +1,7 @@
 export class Canyon {
-  id: number;
+  $exists:();
+  $key: string;
+  $value: string;
   name: string;
   img: string;
   subTitle: string;

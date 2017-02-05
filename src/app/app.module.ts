@@ -3,14 +3,21 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AngularFireModule } from 'angularfire2';
+import { 
+  AngularFireModule, 
+  AuthMethods, 
+  AuthProviders 
+} from "angularfire2";
+
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthService }     from './auth.service';
 import { HomeComponent } from './home/home.component';
 import { LocationService }     from './home/location.service';
 import { CanyonsComponent } from './canyons/canyons.component';
+import { CanyonDetailComponent } from './canyons/canyon-detail.component';
 import { CanyonService }     from './canyons/canyon.service';
 import { CanyonLevelFilter } from './canyons/canyon.pipe';
 import { TunnelsComponent } from './tunnels/tunnels.component';
@@ -26,11 +33,17 @@ export const firebaseConfig = {
   messagingSenderId: "511423852212"
 };
 
+export const firebaseAuthConfig = {
+  provider: AuthProviders.Google,
+  method: AuthMethods.Popup
+};
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CanyonsComponent,
+    CanyonDetailComponent,
     CanyonLevelFilter,
     TunnelsComponent,
     TunnelLevelFilter
@@ -40,12 +53,13 @@ export const firebaseConfig = {
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAi-K8q65y2MxD_nTmAvcDRy9tL8RNF3Gs'
     })
   ],
   providers: [
+    AuthService, 
     LocationService, 
     CanyonService, 
     TunnelService

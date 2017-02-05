@@ -41,6 +41,9 @@
             </div>
           </div>
           <div class="content row">
+<!--            <div *ngIf="isLoggedIn" class="col-xs-12">
+              <button type="button" style="width:100%;" class="btn btn-danger" (click)="addCanyon()">Admin: ADD NEW CANYON</button>
+            </div>-->
             <div class="col-xs-12">
               <h3 class="activity-card-level light muted">Xperience Verte</h3>
             </div>
@@ -60,12 +63,19 @@
                       <h3 class="media-heading">{{canyon.name}}</h3>
                       <h4 class="light">{{canyon.subTitle}}</h4>
                     </div>
-                    <div class="visible-lg col-lg-2">
-                      <button type="button" style="width:100%;" class="btn btn-secondary" (click)="onSelect(canyon)">Photos</button>
-                    </div>
-                    <div class="visible-lg col-lg-2">
-                      <button type="button" style="width:100%;" class="btn btn-secondary" (click)="onSelect(canyon)">Reserver</button>
-                    </div>
+                    <div class="col-lg-4 col-md-12">
+                      <div class="row">
+                        <div class="visible-lg col-lg-6">
+                          <button type="button" style="width:100%;" class="btn btn-secondary" (click)="onSelect(canyon)">Photos</button>
+                        </div>
+                        <div class="visible-lg col-lg-6">
+                          <button type="button" style="width:100%;" class="btn btn-secondary" (click)="onSelect(canyon)">Reserver</button>
+                        </div>
+                        <div class="visible-lg col-lg-offset-6 col-lg-6 btn-admin" *ngIf="isLoggedIn">
+                          <button type="button" style="width:100%;" class="btn btn-danger" (click)="gotoDetail(canyon)">Admin: EDIT</button>
+                        </div>
+                      </div>
+                    </div>  
                   </div>
                   <div class="row">
                     <div class="col-xs-12">
@@ -116,12 +126,19 @@
                       <h3 class="media-heading">{{canyon.name}}</h3>
                       <h4 class="light">{{canyon.subTitle}}</h4>
                     </div>
-                    <div class="visible-lg col-lg-2">
-                      <button type="button" style="width:100%;" class="btn btn-primary" (click)="onSelect(canyon)">Photos</button>
-                    </div>
-                    <div class="visible-lg col-lg-2">
-                      <button type="button" style="width:100%;" class="btn btn-primary" (click)="onSelect(canyon)">Reserver</button>
-                    </div>
+                    <div class="col-lg-4 col-md-12">
+                      <div class="row">
+                        <div class="visible-lg col-lg-6">
+                          <button type="button" style="width:100%;" class="btn btn-primary" (click)="onSelect(canyon)">Photos</button>
+                        </div>
+                        <div class="visible-lg col-lg-6">
+                          <button type="button" style="width:100%;" class="btn btn-primary" (click)="onSelect(canyon)">Reserver</button>
+                        </div>
+                        <div class="visible-lg col-lg-offset-6 col-lg-6 btn-admin" *ngIf="isLoggedIn">
+                          <button type="button" style="width:100%;" class="btn btn-danger" (click)="gotoDetail(canyon)">Admin: EDIT</button>
+                        </div>
+                      </div>
+                    </div>  
                   </div>
                   <div class="row">
                     <div class="col-xs-12">
@@ -172,12 +189,19 @@
                       <h3 class="media-heading">{{canyon.name}}</h3>
                       <h4 class="light">{{canyon.subTitle}}</h4>
                     </div>
-                    <div class="visible-lg col-lg-2">
-                      <button type="button" style="width:100%;" class="btn btn-danger" (click)="onSelect(canyon)">Photos</button>
-                    </div>
-                    <div class="visible-lg col-lg-2">
-                      <button type="button" style="width:100%;" class="btn btn-danger" (click)="onSelect(canyon)">Reserver</button>
-                    </div>
+                    <div class="col-lg-4 col-md-12">
+                      <div class="row">
+                        <div class="visible-lg col-lg-6">
+                          <button type="button" style="width:100%;" class="btn btn-danger" (click)="onSelect(canyon)">Photos</button>
+                        </div>
+                        <div class="visible-lg col-lg-6">
+                          <button type="button" style="width:100%;" class="btn btn-danger" (click)="onSelect(canyon)">Reserver</button>
+                        </div>
+                        <div class="visible-lg col-lg-offset-6 col-lg-6 btn-admin" *ngIf="isLoggedIn">
+                          <button type="button" style="width:100%;" class="btn btn-danger" (click)="gotoDetail(canyon)">Admin: EDIT</button>
+                        </div>
+                      </div>
+                    </div>  
                   </div>
                   <div class="row">
                     <div class="col-xs-12">
