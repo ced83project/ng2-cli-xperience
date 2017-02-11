@@ -4,7 +4,7 @@ import { Router, ActivatedRoute, NavigationEnd, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { AngularFire } from 'angularfire2';
 
-import { Canyon } from './canyon';
+import { ICanyon, Canyon } from './canyon';
 import { CanyonService } from './canyon.service';
 
 @Component({
@@ -15,8 +15,8 @@ import { CanyonService } from './canyon.service';
 export class CanyonsComponent implements OnInit {
 
   isLoggedIn: boolean = false;
-  canyons: Observable<Canyon[]>;
-  selectedCanyon: Canyon;
+  canyons: Observable<ICanyon[]>;
+  selectedCanyon: ICanyon;
 
   constructor(
     private route: ActivatedRoute, 
@@ -55,17 +55,20 @@ export class CanyonsComponent implements OnInit {
     this.canyons = this.canyonService.getAllCanyons();
   }
 
-  onSelect(canyon: Canyon): void {
+  onUpdate(canyon: ICanyon): void {
+    this.router.navigate(['/canyons', canyon.$key]);
+  }
+
+  onSelect(canyon: ICanyon): void {
     this.selectedCanyon = canyon;
   }
 
-  gotoDetail(canyon: Canyon): void {
-    this.router.navigate(['/canyons', canyon.$key]);
+  onDelete(canyon: ICanyon): void {
+    this.canyonService.remove(canyon.$key);
+  }
+
+  addCanyon(): void {
+    this.router.navigate(['/canyon']);
   }
   
-  addCanyon(): void {
-    this.router.navigate(['/canyons/create']);
-  }
-
-
 }

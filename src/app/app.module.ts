@@ -17,7 +17,8 @@ import { AuthService }     from './auth.service';
 import { HomeComponent } from './home/home.component';
 import { LocationService }     from './home/location.service';
 import { CanyonsComponent } from './canyons/canyons.component';
-import { CanyonDetailComponent } from './canyons/canyon-detail.component';
+import { CanyonCardComponent } from './canyons/canyon-card.component';
+import { CanyonFormComponent } from './canyons/canyon-form.component';
 import { CanyonService }     from './canyons/canyon.service';
 import { CanyonLevelFilter } from './canyons/canyon.pipe';
 import { TunnelsComponent } from './tunnels/tunnels.component';
@@ -43,7 +44,8 @@ export const firebaseAuthConfig = {
     AppComponent,
     HomeComponent,
     CanyonsComponent,
-    CanyonDetailComponent,
+    CanyonCardComponent,
+    CanyonFormComponent,
     CanyonLevelFilter,
     TunnelsComponent,
     TunnelLevelFilter

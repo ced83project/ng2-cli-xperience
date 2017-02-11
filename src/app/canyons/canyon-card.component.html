@@ -1,0 +1,61 @@
+              <div [ngClass]="getCardClass(canyon.levelId)" >
+                <div class="col-lg-3 activity-card-left">
+                  <div class="cover" [ngStyle]="{'background-image':'url(' + imageUrl() + ')', 'background-size':'cover'}">
+                    <div class="overlay overlay-activity text-center">
+                      <h3 class="activity-card-level white">{{canyon.level}}</h3>
+                      <h5 class="light white">Tarif: <span class="price">{{canyon.price}}</span> / personne</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-9 activity-card-body">
+                  <div class="row">
+                    <div class="col-lg-8 col-md-12">
+                      <h3 class="media-heading">{{canyon.name}}</h3>
+                      <h4 class="light">{{canyon.subTitle}}</h4>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                      <div class="row">
+                        <div class="visible-lg col-lg-6">
+                          <button type="button" style="width:100%;" [ngClass]="getButtonClass(canyon.levelId)" (click)="onSelect(canyon)">Photos</button>
+                        </div>
+                        <div class="visible-lg col-lg-6">
+                          <button type="button" style="width:100%;" [ngClass]="getButtonClass(canyon.levelId)" (click)="onSelect(canyon)">Reserver</button>
+                        </div>
+                        <div class="visible-lg col-lg-6 btn-admin" *ngIf="isLoggedIn">
+                          <button type="button" style="width:100%;" class="btn btn-danger" (click)="onUpdate(canyon)">Admin: EDIT</button>
+                        </div>
+                        <div class="visible-lg col-lg-6 btn-admin" *ngIf="isLoggedIn">
+                          <button type="button" style="width:100%;" class="btn btn-danger" (click)="onDelete(canyon)">Admin: DELETE</button>
+                        </div>
+                      </div>
+                    </div>  
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <p>{{canyon.desc}}</p>
+                      <div class="row">
+                        <div class="col-lg-5">
+                          <ul>
+                            <li><strong>Marche d'approche:</strong> {{canyon.approche}}</li>
+                            <li><strong>Marche Retour: </strong> {{canyon.return}}</li>
+                            <li><strong>Temps de Canyon:</strong> {{canyon.duration}}</li>
+                          </ul>
+                        </div>
+                        <div class="col-lg-7">
+                          <ul>
+                            <li><strong>Rdv:</strong> {{canyon.rdv}}</li>
+                            <li><strong>{{canyon.from}}</strong></li>
+                            <li><strong>Tarif:</strong> {{canyon.price}}/personne</li>
+                          </ul>
+                        </div>
+                        <div class="hidden-lg col-xs-6">
+                          <button type="button" style="width:100%;margin-bottom:10px;" [ngClass]="getButtonClass(canyon.levelId)" (click)="onSelect(canyon)">Photos</button>
+                        </div>
+                        <div class="hidden-lg col-xs-6">
+                          <button type="button" style="width:100%;margin-bottom:10px;" [ngClass]="getButtonClass(canyon.levelId)" (click)="onSelect(canyon)">Reserver</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>

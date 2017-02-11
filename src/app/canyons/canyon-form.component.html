@@ -1,0 +1,75 @@
+<div *ngIf="canyon" class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+    <h3> Please fill the detail of the canyon</h3>
+      <form id="ngForm" #canyonForm="ngForm">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input name="name" required [(ngModel)]="canyon.name" #name="ngModel" type="text" class="form-control" id="name" placeholder="Name" #spy>
+              <div [hidden]="name.valid || name.pristine" class="text-danger">Required field</div>
+            </div>
+            <div class="form-group">
+              <label for="subTitle">Sous-Titre</label>
+              <input name="subTitle" required [(ngModel)]="canyon.subTitle" #subTitle="ngModel" type="text" class="form-control" id="subTitle" placeholder="Sous-Titre">
+              <div [hidden]="subTitle.valid || subTitle.pristine" class="text-danger">Required field</div>
+            </div>
+            <div class="form-group">
+              <label for="img">Image</label>
+              <input name="img" type="file" id="img" (change)="onFileChange($event)">
+              <p class="help-block">Image de description.</p>
+            </div>
+            <div class="form-group">
+              <label for="levelId">Niveau de pratique</label>
+              <select name="levelId" required [(ngModel)]="canyon.levelId" #levelId="ngModel" class="form-control">
+                <option value="1">Niveau 1</option>
+                <option value="2">Niveau 2</option>
+                <option value="3">Niveau 3</option>
+              </select>
+              <div [hidden]="levelId.valid || levelId.pristine" class="text-danger">Required field</div>
+            </div>
+            <div class="form-group">
+              <label for="level">Niveau (label d'affichage)</label>
+              <input name="level" [(ngModel)]="canyon.level" type="text" class="form-control" id="level" placeholder="eg. Xperience Verte">
+            </div>
+            <div class="form-group">
+              <label for="price">Prix</label>
+              <input name="price" [(ngModel)]="canyon.price" type="text" class="form-control" id="price" placeholder="eg. 50€">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="desc">Description</label>
+              <textarea name="desc" [(ngModel)]="canyon.desc" class="form-control" rows="3" id="desc" placeholder="Description"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="approche">Temps d'approche</label>
+              <input name="approche" [(ngModel)]="canyon.approche" type="text" class="form-control" id="approche" placeholder="eg. 05 minutes">
+            </div>
+            <div class="form-group">
+              <label for="return">Temps de retour</label>
+              <input name="return" [(ngModel)]="canyon.return" type="text" class="form-control" id="return" placeholder="eg. 30 minutes">
+            </div>
+            <div class="form-group">
+              <label for="duration">Durée de la descente</label>
+              <input name="duration" [(ngModel)]="canyon.duration" type="text" class="form-control" id="duration" placeholder="eg. environ 4h30">
+            </div>
+            <div class="form-group">
+              <label for="rdv">Rendez-vous</label>
+              <input name="rdv" [(ngModel)]="canyon.rdv" type="text" class="form-control" id="rdv" placeholder="eg. 08h00 parking de la poste à Cilaos">
+            </div>
+            <div class="form-group">
+              <label for="from">Age minimum</label>
+              <input name="from" [(ngModel)]="canyon.from" type="text" class="form-control" id="from" placeholder="eg. A partir de 18ans">
+            </div>
+          </div>
+        </div>
+        <hr>  
+        <button class="btn btn-default" (click)="goBack()">Cancel</button>
+        <button class="btn btn-primary" (click)="onSubmit()" type="submit" [disabled]="!canyonForm.form.valid">Save</button>
+      </form>
+        
+    </div>
+  </div>
+</div>

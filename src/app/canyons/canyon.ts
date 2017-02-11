@@ -1,7 +1,7 @@
-export class Canyon {
-  $exists:();
-  $key: string;
-  $value: string;
+export interface ICanyon {
+  //$exists?:();
+  $key?: string;
+  $value?: string;
   name: string;
   img: string;
   subTitle: string;
@@ -15,3 +15,19 @@ export class Canyon {
   rdv: string;
   from: string;
 }
+
+export class Canyon implements ICanyon {
+  name: string;
+  img: string;
+  subTitle: string;
+  levelId: string;
+  level: string;
+  price: string;
+  desc: string;
+  approche: string;
+  return: string;
+  duration: string;
+  rdv: string;
+  from: string;
+}
+
