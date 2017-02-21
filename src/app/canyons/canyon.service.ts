@@ -23,6 +23,10 @@ export class CanyonService {
     return this.af.database.object('/canyons/'+key);
   }
   
+  createCanyon(canyon: Canyon) {
+    this.canyons.push(canyon);
+  }
+  
   update(canyon: ICanyon) {
     var key = canyon.$key;
     if (canyon.hasOwnProperty('$key')) {

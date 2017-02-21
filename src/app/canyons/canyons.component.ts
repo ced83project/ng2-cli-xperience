@@ -55,16 +55,20 @@ export class CanyonsComponent implements OnInit {
     this.canyons = this.canyonService.getAllCanyons();
   }
 
-  onUpdate(canyon: ICanyon): void {
-    this.router.navigate(['/canyons', canyon.$key]);
+  onCreateCanyon(canyon: Canyon): void {
+    this.canyonService.createCanyon(canyon);
   }
 
-  onSelect(canyon: ICanyon): void {
-    this.selectedCanyon = canyon;
+  onUpdateCanyon(canyon: ICanyon): void {
+    this.canyonService.update(canyon);
   }
 
-  onDelete(canyon: ICanyon): void {
+  onDeleteCanyon(canyon: ICanyon): void {
     this.canyonService.remove(canyon.$key);
+  }
+
+  onSelectCanyon(canyon: ICanyon): void {
+    this.selectedCanyon = canyon;
   }
 
   addCanyon(): void {

@@ -10,6 +10,7 @@ import {
 } from "angularfire2";
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +19,8 @@ import { HomeComponent } from './home/home.component';
 import { LocationService }     from './home/location.service';
 import { CanyonsComponent } from './canyons/canyons.component';
 import { CanyonCardComponent } from './canyons/canyon-card.component';
-import { CanyonFormComponent } from './canyons/canyon-form.component';
+import { CanyonFormAddComponent } from './canyons/canyon-form-add.component';
+import { CanyonFormUpdateComponent } from './canyons/canyon-form-update.component';
 import { CanyonService }     from './canyons/canyon.service';
 import { CanyonLevelFilter } from './canyons/canyon.pipe';
 import { TunnelsComponent } from './tunnels/tunnels.component';
@@ -45,7 +47,8 @@ export const firebaseAuthConfig = {
     HomeComponent,
     CanyonsComponent,
     CanyonCardComponent,
-    CanyonFormComponent,
+    CanyonFormAddComponent,
+    CanyonFormUpdateComponent,
     CanyonLevelFilter,
     TunnelsComponent,
     TunnelLevelFilter
@@ -58,7 +61,8 @@ export const firebaseAuthConfig = {
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAi-K8q65y2MxD_nTmAvcDRy9tL8RNF3Gs'
-    })
+    }),
+    Ng2Bs3ModalModule
   ],
   providers: [
     AuthService, 

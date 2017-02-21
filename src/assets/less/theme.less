@@ -248,6 +248,27 @@ fieldset {
 }
 
 
+// Forms
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+
+@media (max-width: 480px) {
+	.btn,
+  .btn-group {
+		width: 100%;
+	}
+  .modal-footer .btn + .btn {
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+}
+
 // Social
 
 ul.social-buttons {

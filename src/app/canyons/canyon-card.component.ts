@@ -13,14 +13,14 @@ import { Canyon } from "./canyon";
 
 
 export class CanyonCardComponent {
-  @Input() canyon: Canyon;
-  @Input() isLoggedIn: boolean;
-  
-  @Output() select = new EventEmitter(false);
-  @Output() delete = new EventEmitter(false);
-  @Output() update = new EventEmitter(false);
-  
-  
+    @Input() canyon: Canyon;
+    @Input() isLoggedIn: boolean;
+    
+    @Output() select = new EventEmitter(false);
+    @Output() delete = new EventEmitter(false);
+    @Output() update = new EventEmitter(false);
+    
+    editing: boolean = false;    
     private _imageUrl: string;
 
     constructor( ) {
@@ -86,6 +86,14 @@ export class CanyonCardComponent {
       return style;
     }
     
+    startEdit():void {
+      this.editing = true;
+    }
+    saveEdit(canyon: Canyon):void {
+      this.editing = false;
+      this.update.emit(canyon);
+    }
+
     onUpdate(canyon: Canyon): void {
       this.update.emit(canyon);
     }

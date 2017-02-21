@@ -22,7 +22,11 @@
                           <button type="button" style="width:100%;" [ngClass]="getButtonClass(canyon.levelId)" (click)="onSelect(canyon)">Reserver</button>
                         </div>
                         <div class="visible-lg col-lg-6 btn-admin" *ngIf="isLoggedIn">
-                          <button type="button" style="width:100%;" class="btn btn-danger" (click)="onUpdate(canyon)">Admin: EDIT</button>
+                          <!--<button type="button" style="width:100%;" class="btn btn-danger" (click)="startEdit()">Admin: EDIT</button>-->
+                          <canyon-form-update 
+                            [canyon]="canyon"
+                            (update)="onUpdate($event)">
+                          </canyon-form-update>
                         </div>
                         <div class="visible-lg col-lg-6 btn-admin" *ngIf="isLoggedIn">
                           <button type="button" style="width:100%;" class="btn btn-danger" (click)="onDelete(canyon)">Admin: DELETE</button>

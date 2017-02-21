@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Location }          from '@angular/common';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd, Params } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
@@ -11,13 +10,16 @@ import { ICanyon, Canyon } from './canyon';
 import { CanyonService } from './canyon.service';
 
 @Component({
-  selector: 'canyon-form',
-  templateUrl: './canyon-form.component.html',
-  styleUrls: ['./canyon-form.component.less']
+  selector: 'canyon-form-add',
+  templateUrl: './canyon-form-add.component.html',
+  styleUrls: ['./canyon-form-add.component.less']
 })
-export class CanyonFormComponent implements OnInit {
+export class CanyonFormAddComponent implements OnInit {
 
-  canyon: ICanyon;
+  @Output() createCanyon = new EventEmitter(false);
+  
+  canyon: Canyon = new Canyon();
+  
   files: FileList;
   isLoggedIn: boolean = false;
   
@@ -25,7 +27,6 @@ export class CanyonFormComponent implements OnInit {
     private route: ActivatedRoute, 
     private router: Router,
     private canyonService: CanyonService,
-    private location: Location,
     public af: AngularFire
   ) {
   
@@ -56,21 +57,19 @@ export class CanyonFormComponent implements OnInit {
   }
   
   ngOnInit(): void {
+  /*
     this.route.params
       .switchMap((params: Params) => this.canyonService.getCanyonById(params['id']))
       .subscribe(canyon => this.canyon = canyon);
+      */
   }
 
-  goBack(): void {
-    this.location.back();
+    
+  clearData(): void {
+    this.canyon.clear();
   }
   
-  onFileChange(event) {
-    this.files = null;
-    this.files = event.srcElement.files;    
-  }
-  
-  onSubmit() {
+  submit(): void {
     if(this.files && this.files.length > 0) {
       let file = this.files[0];
       let storageRef = firebase.storage().ref();
@@ -94,13 +93,16 @@ export class CanyonFormComponent implements OnInit {
       
       this.canyon.img = file.name;
     }
-    if(this.canyon.$key) {
-      this.canyonService.update(this.canyon);
-    } else {
-      this.canyonService.push(this.canyon);
-    }
-    this.location.back();
 
+    if (this.canyon.name.length) {
+      this.createCanyon.emit(this.canyon);
+    }
+    this.clearData();
+  }
+
+  onFileChange(event) {
+    this.files = null;
+    this.files = event.srcElement.files;    
   }
   
 }
