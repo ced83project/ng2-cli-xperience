@@ -64,9 +64,9 @@
               *ngFor="let canyon of (canyons | async | canyonLevelFilter:'2')" 
               [canyon]="canyon"
               [isLoggedIn]="isLoggedIn"
-              (delete)="onDelete($event)"
-              (update)="onUpdate($event)"
-              (select)="onSelect($event)"
+              (delete)="onDeleteCanyon($event)"
+              (update)="onUpdateCanyon($event)"
+              (select)="onSelectCanyon($event)"
               class="col-lg-12 col-sm-6 col-xs-12">
             </canyon-card>
             
@@ -77,9 +77,9 @@
               *ngFor="let canyon of (canyons | async | canyonLevelFilter:'3')" 
               [canyon]="canyon"
               [isLoggedIn]="isLoggedIn"
-              (delete)="onDelete($event)"
-              (update)="onUpdate($event)"
-              (select)="onSelect($event)"
+              (delete)="onDeleteCanyon($event)"
+              (update)="onUpdateCanyon($event)"
+              (select)="onSelectCanyon($event)"
               class="col-lg-12 col-sm-6 col-xs-12">
             </canyon-card>
             

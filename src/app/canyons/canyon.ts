@@ -1,8 +1,9 @@
 export interface ICanyon {
-  //$exists?:();
   $key?: string;
   $value?: string;
   name: string;
+  lat: number;
+	lng: number;
   img: string;
   subTitle: string;
   levelId: string;
@@ -14,10 +15,14 @@ export interface ICanyon {
   duration: string;
   rdv: string;
   from: string;
+  icon: string;
+  
 }
 
 export class Canyon implements ICanyon {
   name: string;
+  lat: number;
+	lng: number;
   img: string;
   subTitle: string;
   levelId: string;
@@ -29,11 +34,14 @@ export class Canyon implements ICanyon {
   duration: string;
   rdv: string;
   from: string;
+  icon: string;
   
   constructor() {} 
   
   clear(){
     this.name = '';
+    this.lat = 0;
+    this.lng = 0;
     this.img = '';
     this.subTitle = '';
     this.levelId = '';

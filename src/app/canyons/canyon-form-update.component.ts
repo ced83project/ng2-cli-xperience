@@ -26,10 +26,6 @@ export class CanyonFormUpdateComponent implements OnInit {
 
   }
     
-  clearData(): void {
-    this.canyon.clear();
-  }
-  
   submit(): void {
     if(this.files && this.files.length > 0) {
       let file = this.files[0];
@@ -58,7 +54,6 @@ export class CanyonFormUpdateComponent implements OnInit {
     if (this.canyon.name.length) {
       this.update.emit(this.canyon);
     }
-    this.clearData();
   }
 
   onFileChange(event) {

@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthService }     from './auth.service';
 import { HomeComponent } from './home/home.component';
+import { MapInfoComponent } from './home/map-info.component';
 import { LocationService }     from './home/location.service';
 import { CanyonsComponent } from './canyons/canyons.component';
 import { CanyonCardComponent } from './canyons/canyon-card.component';
@@ -45,6 +46,7 @@ export const firebaseAuthConfig = {
   declarations: [
     AppComponent,
     HomeComponent,
+    MapInfoComponent,
     CanyonsComponent,
     CanyonCardComponent,
     CanyonFormAddComponent,

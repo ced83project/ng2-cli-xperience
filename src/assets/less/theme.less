@@ -665,6 +665,78 @@ section {
   }
 }
 
+
+#map-section{
+    
+    padding-bottom: 0;
+    
+    .activity-card {
+      background-color: @gray-lighter;
+    
+      .price{
+        color: @white;
+      }
+      .activity-card-left{
+        padding: 0px;
+      }
+      .activity-card-body {
+        padding: 15px;
+      }      
+    }
+    
+    .activity-card-primary {
+     	border-left: 10px solid @theme-primary;
+      .overlay {
+        background: @theme-primary !important;
+      }
+    }
+    .activity-card-success {
+     	border-left: 10px solid @theme-secondary;    
+      .overlay {
+        background: @theme-secondary !important;
+      }
+    }
+    .activity-card-danger {
+     	border-left: 10px solid @theme-danger;    
+      .overlay {
+        background: @theme-danger !important;
+      }
+    }
+    .activity {
+      
+      .cover {
+        width: 100%;
+        height: auto;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+      
+        .overlay {
+          height: 250px;
+          padding-top: 60px;
+          opacity: 0;
+          background: @theme-primary;
+          -webkit-transition: opacity 0.45s ease;
+          transition: opacity 0.45s ease;    
+        }
+        
+        .overlay-activity {
+          height: 300px;
+          padding-top: 80px;
+        }
+      }
+
+      &:hover {
+        .cover {
+          .overlay {
+            opacity: 1;
+          }
+        }
+      }
+    }
+}
+
+
 #activity,
 #services {
   .section{

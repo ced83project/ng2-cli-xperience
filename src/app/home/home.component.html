@@ -406,33 +406,37 @@
             </div>  
           </div>
         </div>
-      </div>
+      </div>          
+    </section><!-- /.Services -->
+
+    <!-- Map --> 
+    <section id="map-section" class="section  bg-gray-lighter">
       <div class="map-container">
         <sebm-google-map 
-          [latitude]="lat"
-          [longitude]="lng"
-          [zoom]="zoom"
+          [latitude]="mapLat"
+          [longitude]="mapLng"
+          [zoom]="mapZoom"
           [scrollwheel]="false">
           
           <sebm-google-map-marker 
-              *ngFor="let m of markers; let i = index"
-              (markerClick)="clickedMarker(m.label, i)"
-              [latitude]="m.lat"
-              [longitude]="m.lng"
-              [label]="m.label">
+              *ngFor="let canyon of (canyons | async)" 
+              [iconUrl]="canyon.icon"
+              [latitude]="canyon.lat"
+              [longitude]="canyon.lng">
               
             <sebm-google-map-info-window>
-              <strong>{{m.name}}</strong>
+              <div id="map-activity" class="section">
+                <div>
+                  <map-info [canyon]="canyon"></map-info>
+                </div>
+              </div>
             </sebm-google-map-info-window>
             
           </sebm-google-map-marker>
-          
+       
         </sebm-google-map>
-    
       </div>    
-          
-    </section><!-- /.Services -->
-
+    </section><!-- /.Map -->
 
     <!-- Subscribe --> 
     <section id="subscribe" class="section bg-gray-lighten">

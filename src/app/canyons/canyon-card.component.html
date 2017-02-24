@@ -14,7 +14,7 @@
                       <h4 class="light">{{canyon.subTitle}}</h4>
                     </div>
                     <div class="col-lg-4 col-md-12">
-                      <div class="row">
+                      <div class="row canyon-btn">
                         <div class="visible-lg col-lg-6">
                           <button type="button" style="width:100%;" [ngClass]="getButtonClass(canyon.levelId)" (click)="onSelect(canyon)">Photos</button>
                         </div>
@@ -37,7 +37,7 @@
                   <div class="row">
                     <div class="col-xs-12">
                       <p>{{canyon.desc}}</p>
-                      <div class="row">
+                      <div class="row canyon-details">
                         <div class="col-lg-5">
                           <ul>
                             <li><strong>Marche d'approche:</strong> {{canyon.approche}}</li>
@@ -52,10 +52,10 @@
                             <li><strong>Tarif:</strong> {{canyon.price}}/personne</li>
                           </ul>
                         </div>
-                        <div class="hidden-lg col-xs-6">
+                        <div class="canyon-btn hidden-lg col-xs-6">
                           <button type="button" style="width:100%;margin-bottom:10px;" [ngClass]="getButtonClass(canyon.levelId)" (click)="onSelect(canyon)">Photos</button>
                         </div>
-                        <div class="hidden-lg col-xs-6">
+                        <div class="canyon-btn hidden-lg col-xs-6">
                           <button type="button" style="width:100%;margin-bottom:10px;" [ngClass]="getButtonClass(canyon.levelId)" (click)="onSelect(canyon)">Reserver</button>
                         </div>
                       </div>

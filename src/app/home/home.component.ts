@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd, Params } from '@angular/router';
-
 import { Observable } from 'rxjs/Observable';
+import { AngularFire } from 'angularfire2';
 
-import { Location } from './location';
-import { LocationService } from './location.service';
+import { ICanyon, Canyon } from '../canyons/canyon';
+import { CanyonService } from '../canyons/canyon.service';
+
 
 @Component({
   selector: 'app-home',
@@ -13,12 +14,17 @@ import { LocationService } from './location.service';
 })
 export class HomeComponent implements OnInit {
 
-  //markers: Observable<Location[]>;
+  canyons: Observable<ICanyon[]>;
+
+  mapLat: number = -21.115141;
+  mapLng: number = 55.536384;
+  mapZoom: number = 10;
   
   constructor(
     private route: ActivatedRoute, 
     private router: Router,
-    private locationService: LocationService
+    private canyonService: CanyonService,
+    public af: AngularFire
   ) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd){
@@ -36,19 +42,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() { 
-    //this.markers = this.locationService.getAllLocations();
+    this.canyons = this.canyonService.getAllCanyons();
   }
 
-  title: string = 'My first angular2-google-maps project';
-  lat: number = -21.115141;
-  lng: number = 55.536384;
-  zoom: number = 10;
-
-  clickedMarker(label: string, index: number) {
-    console.log(`clicked the marker: ${label || index}`)
-  }
-
-  
   markers: marker[] = [
 {
     lat : -20.947537546905576,

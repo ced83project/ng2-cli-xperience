@@ -38,6 +38,7 @@ export class CanyonService {
     if (canyon.hasOwnProperty('$exists')) {
       delete canyon['$exists'];
     }
+    canyon.icon = this.getCustomIcon(canyon.levelId);
     this.canyons.update(key, canyon);
   }
   
@@ -49,4 +50,16 @@ export class CanyonService {
     this.canyons.remove(id);
   }
 
+  getCustomIcon(levelId: string): string {
+    if(levelId == "1") {
+      return "assets/icons/maps/green/climbing.png";
+    }
+    if(levelId == "2") {
+      return "assets/icons/maps/blue/climbing.png";
+    }
+    if(levelId == "3") {
+      return "assets/icons/maps/red/climbing.png";
+    }
+  }
+  
 }
